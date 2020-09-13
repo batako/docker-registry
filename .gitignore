@@ -1,4 +1,6 @@
 /auth
 !/auth/.keep
+/certs
+!/certs/.keep
 /registry
 !/registry/.keep

@@ -11,9 +11,12 @@ services:
       REGISTRY_HTTP_TLS_CERTIFICATE: /certs/domain.crt
       REGISTRY_HTTP_TLS_KEY: /certs/domain.key
     volumes:
-      - ./registry:/var/lib/registry
+      - registry:/var/lib/registry
       - ./auth:/auth
       # オプション
       - ./certs:/certs
     ports:
       - 5000:5000
+
+volumes:
+  registry:

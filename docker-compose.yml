@@ -18,5 +18,22 @@ services:
     ports:
       - 5000:5000
 
+  web:
+    depends_on:
+      - registry
+    image: parabuzzle/craneoperator:latest
+    ports:
+      - 8080:80
+    environment:
+      - REGISTRY_HOST=registry
+      - REGISTRY_PROTOCOL=https
+      - SSL_VERIFY=false
+      - REGISTRY_PUBLIC_URL=localhost
+      - ALLOW_REGISTRY_LOGIN=true
+      - REGISTRY_ALLOW_DELETE=true
+      # ベーシック認証用のID/PW
+      # - USERNAME=username
+      # - PASSWORD=password
+
 volumes:
   registry:

@@ -3,6 +3,13 @@
 $ htpasswd -Bbc auth/htpasswd [USERNAME] [PASSWORD]
 ```
 
+## 必要に応じてインストール
+
+### Ubuntu
+```
+# apt install -y apache2-utils
+```
+
 # HTTPS 用の証明書作成
 HTTPS で通信する場合のみ作成
 ```
